@@ -53,7 +53,7 @@ def submit_agent(args, model_params):
         ii += 1
         proj = env.dict_to_vec(di)
         action = actor.act(proj)
-        action += np.random.rand(22)/10.
+        action += np.random.rand(len(action))/10.
 
         [di, reward, done, info] = client.env_step(action.tolist(), True)
         reward_sum += reward
